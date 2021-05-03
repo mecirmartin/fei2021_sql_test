@@ -35,13 +35,12 @@ JOIN staff ON store.manager_staff_id = staff.staff_id
 SELECT
     actor.actor_id,
     CONCAT(first_name, ' ', last_name),
-    COUNT(film.film_id)
+    COUNT(film_actor.film_id)
 FROM
     actor
 JOIN film_actor ON actor.actor_id = film_actor.actor_id
-JOIN film ON film_actor.film_id = film.film_id
 GROUP BY
-    actor.actor_id
+    film_actor.actor_id
 
 #4
 
